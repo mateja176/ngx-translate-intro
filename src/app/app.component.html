@@ -1,7 +1,8 @@
-<div>
+<div *ngIf="('demo.title' | translate) as templateTitle">
   <!-- translation: translation pipe -->
   <h1>{{ "demo.title" | translate }}</h1>
   <h1>{{ title }}</h1>
+  <h1>{{ templateTitle }}</h1>
 
   <!-- translation: directive (key as attribute)-->
   <p [translate]="'demo.text'"></p>
