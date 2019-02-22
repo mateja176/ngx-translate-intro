@@ -1,6 +1,7 @@
 <div>
   <!-- translation: translation pipe -->
   <h1>{{ "demo.title" | translate }}</h1>
+  <h1>{{ title }}</h1>
 
   <!-- translation: directive (key as attribute)-->
   <p [translate]="'demo.text'"></p>
@@ -9,6 +10,9 @@
   <p translate>demo.text</p>
 
   <p>{{ "demo.greeting" | translate: { name: "Andrea" } }}</p>
+
+  <button (click)="useLanguage('en')">en</button>
+  <button (click)="useLanguage('de')">de</button>
 </div>
 
 <router-outlet></router-outlet>
