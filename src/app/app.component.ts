@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [TranslatePipe],
 })
 export class AppComponent {
-  constructor(private translate: TranslateService) {
+  title = this.translatePipe.transform('demo.title');
+
+  constructor(
+    private translate: TranslateService,
+    private translatePipe: TranslatePipe,
+  ) {
     translate.setDefaultLang('en');
   }
 
