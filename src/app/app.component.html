@@ -14,6 +14,11 @@
 
   <button (click)="useLanguage('en')">en</button>
   <button (click)="useLanguage('de')">de</button>
+
+  <p>{{ now | date: "longDate":"":"ar" }}</p>
+  <p>{{ date | async }}</p>
+  <button (click)="useLocale('en')">en locale</button>
+  <button (click)="useLocale('ar')">ar locale</button>
 </div>
 
 <router-outlet></router-outlet>
