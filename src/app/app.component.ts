@@ -8,7 +8,7 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   providers: [TranslatePipe],
 })
 export class AppComponent {
-  title = this.translatePipe.transform('demo.title');
+  title = this.translatePipe.transform('title');
 
   constructor(
     private translate: TranslateService,
