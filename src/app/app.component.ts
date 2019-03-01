@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -7,14 +7,18 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss'],
   providers: [TranslatePipe],
 })
-export class AppComponent {
-  title = this.translatePipe.transform('title');
+export class AppComponent implements OnInit {
+  title: string;
 
   constructor(
     private translate: TranslateService,
     private translatePipe: TranslatePipe,
   ) {
     translate.setDefaultLang('en');
+  }
+
+  ngOnInit() {
+    this.title = this.translatePipe.transform('title');
   }
 
   useLanguage(language: string) {
